@@ -1,0 +1,48 @@
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args){
+		Scanner console = new Scanner(System.in);
+		try{
+		System.out.printf("Введите сторону 1: ");
+		float maxnum = 0;
+       float num = console.nextFloat();
+       if (num <=0){
+           System.out.printf("Первая сторона меньше или равна 0");
+       }
+       System.out.printf("Введите сторону 2: ");
+       float num2 = console.nextFloat();
+       if (num2 <=0){
+           System.out.printf("Вторая сторона меньше или равна 0");
+       }
+       System.out.printf("Введите сторону 3: ");
+       float num3 = console.nextFloat();
+       if (num3 <=0){
+           System.out.printf("Третья сторона меньше или равна 0");
+       }
+        if (num > num2 && num > num3){
+          maxnum = 1;
+      }
+      if (num2 > num && num2 > num3 ){
+          maxnum = 2;
+      }
+      else{
+          maxnum = 3;
+      }
+       if (num+num2 > num3 && num2+num3 > num && num+num3 > num2){
+           System.out.printf("Треугольник со сторонами 1 - " + num + " 2 - " + num2 + " и 3 - " + num3 + " сторонами существует ");
+       }
+       else if (maxnum == 3){
+            System.out.printf("Треугольник со сторонами 1 - " + num + " 2 - " + num2 + " и 3 - " + num3 + " не сторонами существует так как суммы сторон 1 - " + num + " и 2 - " + num2 + " меньше или равна 3 - " + num3);
+       }
+       else if (maxnum == 2){
+           System.out.printf("Треугольник со сторонами 1 - " + num + " 2 - " + num2 + " и 3 - " + num3 + " не сторонами существует так как суммы сторон 1 - " + num + " и 3 - " + num3 + " меньше или равна 2 - " + num2);
+       }
+       else if (maxnum == 1){
+            System.out.printf("Треугольник со сторонами 1 - " + num + " 2 - " + num2 + " и 3 - " + num3 + " не сторонами существует так как суммы сторон 2 - " + num2 + " и 3 - " + num3 + " меньше или равна 1 - " + num);
+       }
+		} catch (Exception e1){
+		        System.out.printf("Вы ввели не числа");
+		}
+	}
+}
